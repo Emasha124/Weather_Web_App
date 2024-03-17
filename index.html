@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>weather app</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+
+ 
+</head>
+
+<body>
+  <!-----------------------------------------header-------------------------------------------->
+
+
+
+  <div class="headerbody">
+
+    <div class="d-flex flex-row ">
+      <div class="text-center px-3 text-light ">
+        <b>Dark Mode <br>
+          On/Off</b>
+      </div>
+
+      <label class="switch">
+        <input type="checkbox" id="darkModeSwitch" checked>
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <ul class="nav justify-content-end ">
+      <li>
+        <a class="nav-link active nav-item" aria-current="page" href="#">HOME</a>
+      </li>
+      <li>
+        <a class="nav-link nav-item" href="#TODAY">TODAY</a>
+      </li>
+      <li>
+        <div class="btn-group">
+          <button class=" dropdown btn btn-secondary dropdown-toggle btn-custom  " type="button"
+            data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+            FORECAST
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#Today Forecast">Today Forecast</a></li>
+            <li><a class="dropdown-item" href="#Next 3 Days Forecast">Next 3 Days Forecast</a></li>
+            <li><a class="dropdown-item" href="#Previous 7 Days Forecast">Previous 7 Days Forecast</a></li>
+          </ul>
+        </div>
+
+
+      </li>
+      <li>
+        <a class="nav-link nav-item" href="#map">MAP</a>
+      </li>
+    </ul>
+    <h5 class="title">🌍<b>Weather Forecast</b></h5>
+    <div class="user-interface ">
+      <input type="text" id="location-input" class="location" placeholder="Enter location" />
+      <button class="search-button" id="search-btn">Search</button>
+    </div>
+  </div>
+
+
+
+  <!--------------------------------------------------------------current weather------------------------------------------------->
+  <div class="card" id="ccard">
+    <section id="TODAY">
+      <div class="location-and-date">
+        <h1 class="location-and-date__location" id="location">Panadura , Sri Lanka</h1>
+        <h4 class="date" id="date">Sunday 4th August</h4>
+      </div>
+
+
+
+
+
+
+      <div class="current-temperature">
+        <div class="current-temperature__icon-container">
+          <img src="./photos/clear-sky.png" style="width:150px;" id="icon" id="weatherIcon"
+            class=" current-temperature__icon" alt="">
+        </div>
+
+        <div class="current-temperature__content-container">
+          <div class="current-temperature__value" id="current-temp">21&deg;</div>
+          <div class="current-temperature__summary" id="summary" id="current-temp-sum">Mostly Sunny</div>
+        </div>
+      </div>
+
+      <p class="pclass">Daily Report</p>
+
+      <div class="mx-2 p-3">
+        <div style="max-width: 1450px; ">
+
+          <div class="mt-4 ">
+            <div class="card" id="cardbody">
+              <div class="card-body">
+
+                <div style="overflow-x:auto;">
+                  <table>
+                    <tr>
+                      <th id="Location">Panadura</th>
+                      <th id="Temperature">25&deg</th>
+                      <th id="Humidity">33&deg</th>
+                      <th id="Wind Speed">75.22kmph</th>
+                      <th id="Condition">Cloudy</th>
+                      <th id="Region">Western</th>
+
+
+                    </tr>
+                    <tr id="tr">
+                      <td>Location</td>
+                      <td>Temperature</td>
+                      <td> Humidity</td>
+                      <td>Wind Speed</td>
+                      <td>Condition</td>
+                      <td>Region</td>
+
+                    </tr>
+
+                  </table>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-------------------------------------------------------Today Forecast------------------------------------------------->
+      <section id="Today Forecast">
+
+        <p class="pclass">Today Forecast</p>
+
+
+        <div class="mx- p-1">
+          <div class="d-flex flex-row mb-3">
+            <div class="card-group">
+              <div class="mx-3" style="max-width:180px;">
+                <div class="card" id="cardbody1">
+                  <div class="card-body">
+                    <h5 class="card-title" style="font-size: 20px;font-weight: 600;margin-left:1px;" id="hour1">3 am
+                    </h5>
+                    <img src="./photos/05.04-48_generated.jpg" class="card-img-top" alt="..." id="img1">
+                    <p class="card-text"><small class="text-body-secondary"
+                        style="font-size: 20px;font-weight: 600;margin-left:10px;" id="temp1">14&deg</small></p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="mx-3 " style="max-width: 180px;">
+                <div class="card" id="cardbody1">
+                  <div class="card-body">
+                    <h5 class="card-title" style="font-size: 20px;font-weight: 600;margin-left:1px;" id="hour2">3 am
+                    </h5>
+                    <img src="./photos/05.04-48_generated.jpg" class="card-img-top" alt="..." id="img2">
+                    <p class="card-text"><small class="text-body-secondary"
+                        style="font-size: 20px;font-weight: 600;margin-left:10px;" id="temp2">14&deg</small></p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="mx-3 " style="max-width: 180px;">
+                <div class="card" id="cardbody1">
+
+                  <div class="card-body">
+                    <h5 class="card-title" style="font-size: 20px;font-weight: 600;margin-left:1px;" id="hour3">3 am
+                    </h5>
+                    <img src="./photos/05.04-48_generated.jpg" class="card-img-top" alt="..." id="img3">
+                    <p class="card-text"><small class="text-body-secondary"
+                        style="font-size: 20px;font-weight: 600;margin-left:10px;" id="temp3">14&deg</small></p>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              <div class="mx-3" style="max-width: 180px;">
+                <div class="card" id="cardbody1">
+
+                  <div class="card-body">
+                    <h5 class="card-title" style="font-size: 20px;font-weight: 600;margin-left:1px;" id="hour4">3 am
+                    </h5>
+                    <img src="./photos/05.04-48_generated.jpg" class="card-img-top" alt="..." id="img4">
+                    <p class="card-text"><small class="text-body-secondary"
+                        style="font-size: 20px;font-weight: 600;margin-left:10px;" id="temp4">14&deg</small></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mx-3 " style="max-width: 180px;">
+                <div class="card" id="cardbody1">
+
+                  <div class="card-body">
+                    <h5 class="card-title" style="font-size: 20px;font-weight: 600;margin-left:1px;" id="hour5">3 am
+                    </h5>
+                    <img src="./photos/05.04-48_generated.jpg" class="card-img-top" alt="..." id="img5">
+                    <p class="card-text"><small class="text-body-secondary"
+                        style="font-size: 20px;font-weight: 600;margin-left:10px;" id="temp5">14&deg</small></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mx-3 " style="max-width: 180px;">
+                <div class="card" id="cardbody1">
+
+                  <div class="card-body">
+                    <h5 class="card-title" style="font-size: 20px;font-weight: 600;margin-left:1px;" id="hour6">3 am
+                    </h5>
+                    <img src="./photos/05.04-48_generated.jpg" class="card-img-top" alt="..." id="img6">
+                    <p class="card-text"><small class="text-body-secondary"
+                        style="font-size: 20px;font-weight: 600;margin-left:10px;" id="temp6">14&deg</small></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mx-3 " style="max-width: 180px;">
+                <div class="card" id="cardbody1">
+
+                  <div class="card-body">
+                    <h4 class="card-title" style="font-size: 20px;font-weight: 600;margin-left:1px;" id="hour7">3 am
+                    </h4>
+                    <img src="./photos/05.04-48_generated.jpg" class="card-img-top" alt="..." id="img7">
+                    <p class="card-text"><small class="text-body-secondary"
+                        style="font-size: 20px;font-weight: 600;margin-left:10px;" id="temp7">14</small></p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+      </section>
+    </section>
+
+    <!--------------------------------------------------------------Next 3 Days--------------------------------------------->
+    <section id="Next 3 Days Forecast">
+      <div class="nextdays">
+        <p class="pclass">Next 3 Days Forecast</p>
+        <div class="nextdays">
+
+          <div class="mx-2 p-3">
+            <div style="max-width: 1450px;">
+
+              <div class="mt-4 ">
+                <div class="card" id="cardbody">
+                  <div class="card-body">
+                    <div style="overflow-x:auto;">
+                      <table>
+                        <tr>
+                          <th id="date21">23/01/2024</th>
+                          <th id="temperature21">25&deg</th>
+                          <th id="humidity21">33&deg</th>
+                          <th id="windSpeed21">75.22kmph</th>
+                          <th id="condition21">Cloudy</th>
+                          <th id="region21">Western</th>
+
+                        </tr>
+                        <tr>
+                          <td> Date</td>
+                          <td>Temperature</td>
+                          <td> Humidity</td>
+                          <td>Wind Speed</td>
+                          <td>Condition</td>
+                          <td>Region</td>
+
+                        </tr>
+
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="mt-4 ">
+                <div class="card" id="cardbody">
+                  <div class="card-body">
+                    <div style="overflow-x:auto;">
+                      <table>
+                        <tr>
+                          <th id="date22">23/01/2024</th>
+                          <th id="temperature22">25&deg</th>
+                          <th id="humidity22">33&deg</th>
+                          <th id="windSpeed22">75.22kmph</th>
+                          <th id="condition22">Cloudy</th>
+                          <th id="region22">Western</th>
+
+                        </tr>
+                        <tr>
+                          <td> Date</td>
+                          <td>Temperature</td>
+                          <td> Humidity</td>
+                          <td>Wind Speed</td>
+                          <td>Condition</td>
+                          <td>Region</td>
+
+                        </tr>
+
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="mt-4 ">
+                <div class="card" id="cardbody">
+                  <div class="card-body">
+                    <div style="overflow-x:auto;">
+                      <table>
+                        <tr>
+                          <th id="date23">23/01/2024</th>
+                          <th id="temperature23">25&deg</th>
+                          <th id="humidity23">33&deg</th>
+                          <th id="windSpeed23">75.22kmph</th>
+                          <th id="condition23">Cloudy</th>
+                          <th id="region23">Western</th>
+
+                        </tr>
+                        <tr>
+                          <td> Date</td>
+                          <td>Temperature</td>
+                          <td> Humidity</td>
+                          <td>Wind Speed</td>
+                          <td>Condition</td>
+                          <td>Region</td>
+
+                        </tr>
+
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+            </div>
+          </div>
+
+    </section>
+
+    <!-----------------------------------------------------------------------past 7 days---------------------------------------------------->
+
+
+    <section id="Previous 7 Days Forecast">
+
+
+
+
+      <p class="pclass">Previous 7 Days Forecast</p>
+
+      <div class="nextdays">
+
+
+
+        <div class="mx-2 p-3">
+          <div style="max-width: 1450px; ">
+
+            <div class="mt-4 ">
+              <div class="card" id="cardbody">
+                <div class="card-body">
+                  <div style="overflow-x:auto;">
+                    <table>
+                      <tr>
+                        <th id="Date1">23/01/2024</th>
+                        <th id="Temperature1">25&deg</th>
+                        <th id="Humidity1">33&deg</th>
+                        <th id="Wind Speed1">75.22kmph</th>
+                        <th id="Condition1">Cloudy</th>
+                        <th id="Region1">Western</th>
+
+                      </tr>
+                      <tr>
+                        <td>Date</td>
+                        <td>Temperature</td>
+                        <td>Humidity</td>
+                        <td>Wind Speed</td>
+                        <td>Condition</td>
+                        <td>Region</td>
+
+                      </tr>
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="mt-4 ">
+              <div class="card" id="cardbody">
+                <div class="card-body">
+                  <div style="overflow-x:auto;">
+                    <table>
+                      <tr>
+                        <th id="Date2">23/01/2024</th>
+                        <th id="Temperature2">25&deg</th>
+                        <th id="Humidity2">33&deg</th>
+                        <th id="Wind Speed2">75.22kmph</th>
+                        <th id="Condition2">Cloudy</th>
+                        <th id="Region2">Western</th>
+
+                      </tr>
+                      <tr>
+                        <td>Date</td>
+                        <td>Temperature</td>
+                        <td>Humidity</td>
+                        <td>Wind Speed</td>
+                        <td>Condition</td>
+                        <td>Region</td>
+
+                      </tr>
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="mt-4 ">
+              <div class="card" id="cardbody">
+                <div class="card-body">
+                  <div style="overflow-x:auto;">
+                    <table>
+                      <tr>
+                        <th id="Date3">23/01/2024</th>
+                        <th id="Temperature3">25&deg</th>
+                        <th id="Humidity3">33&deg</th>
+                        <th id="Wind Speed3">75.22kmph</th>
+                        <th id="Condition3">Cloudy</th>
+                        <th id="Region3">Western</th>
+
+                      </tr>
+                      <tr>
+                        <td>Date</td>
+                        <td>Temperature</td>
+                        <td>Humidity</td>
+                        <td>Wind Speed</td>
+                        <td>Condition</td>
+                        <td>Region</td>
+
+                      </tr>
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 ">
+              <div class="card" id="cardbody">
+                <div class="card-body">
+                  <div style="overflow-x:auto;">
+                    <table>
+                      <tr>
+                        <th id="Date4">23/01/2024</th>
+                        <th id="Temperature4">25&deg</th>
+                        <th id="Humidity4">33&deg</th>
+                        <th id="Wind Speed4">75.22kmph</th>
+                        <th id="Condition4">Cloudy</th>
+                        <th id="Region4">Western</th>
+
+                      </tr>
+                      <tr>
+                        <td>Date</td>
+                        <td>Temperature</td>
+                        <td>Humidity</td>
+                        <td>Wind Speed</td>
+                        <td>Condition</td>
+                        <td>Region</td>
+
+                      </tr>
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="mt-4 ">
+              <div class="card" id="cardbody">
+                <div class="card-body">
+                  <div style="overflow-x:auto;">
+                    <table>
+                      <tr>
+                        <th id="Date5">23/01/2024</th>
+                        <th id="Temperature5">25&deg</th>
+                        <th id="Humidity5">33&deg</th>
+                        <th id="Wind Speed5">75.22kmph</th>
+                        <th id="Condition5">Cloudy</th>
+                        <th id="Region5">Western</th>
+
+                      </tr>
+                      <tr>
+                        <td>Date</td>
+                        <td>Temperature</td>
+                        <td>Humidity</td>
+                        <td>Wind Speed</td>
+                        <td>Condition</td>
+                        <td>Region</td>
+
+                      </tr>
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 ">
+              <div class="card" id="cardbody">
+                <div class="card-body">
+                  <div style="overflow-x:auto;">
+                    <table>
+                      <tr>
+                        <th id="Date6">23/01/2024</th>
+                        <th id="Temperature6">25&deg</th>
+                        <th id="Humidity6">33&deg</th>
+                        <th id="Wind Speed6">75.22kmph</th>
+                        <th id="Condition6">Cloudy</th>
+                        <th id="Region6">Western</th>
+
+                      </tr>
+                      <tr>
+                        <td>Date</td>
+                        <td>Temperature</td>
+                        <td>Humidity</td>
+                        <td>Wind Speed</td>
+                        <td>Condition</td>
+                        <td>Region</td>
+
+                      </tr>
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 ">
+              <div class="card" id="cardbody">
+                <div class="card-body">
+                  <div style="overflow-x:auto;">
+                    <table>
+                      <tr>
+                        <th id="Date7">23/01/2024</th>
+                        <th id="Temperature7">25&deg</th>
+                        <th id="Humidity7">33&deg</th>
+                        <th id="Wind Speed7">75.22kmph</th>
+                        <th id="Condition7">Cloudy</th>
+                        <th id="Region7">Western</th>
+
+                      </tr>
+                      <tr>
+                        <td>Date</td>
+                        <td>Temperature</td>
+                        <td>Humidity</td>
+                        <td>Wind Speed</td>
+                        <td>Condition</td>
+                        <td>Region</td>
+
+                      </tr>
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+    </section>
+
+
+
+    <div class=" bg-info-subtle mt-0">
+      <div class=" bg-info-subtle card m-5">
+        <div id="map" class="container-fluid card-body " style="width: 100%; height: 550px;"></div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-------------------------------------------------Footer----------------------------------------->
+
+    <div class="card text-center">
+      <div class="card-header">
+        Subscribe to our newsletter.
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit quis. Duis tempor
+          incididunt dolore. </h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Subscribe</a>
+      </div>
+      <div class="card-footer text-body-secondary">
+        @sdfgthyjfgrthtyuk
+      </div>
+    </div>
+
+    
+
+
+
+    
+    <script src="javascript.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,439 @@
+
+
+.nav{
+  margin-left:190px;
+}
+
+.headerbody{
+  margin-bottom: 20px;
+
+    max-width: 500;
+    max-height: 20rem;
+    background-image:url("./background.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.dropdown{
+text-decoration-color: #2c354a;
+font-size: 16.5px;
+margin-top: 4px;
+}
+nav justify-content-end{
+ padding: 0px;
+}
+nav justify-content-end{
+  margin-right: 80px;
+}
+.nav-item{
+  padding: 10px 30px ;
+  color: #fdfbfb;
+}
+.nav-item a:hover {
+  background-color:#010510; /* Set your desired hover background color */
+border-radius: 7px;
+
+}
+btn-group{
+
+}
+.btn-custom {
+  background-color: transparent;
+  border: none;
+}
+
+.pclass{
+    margin-top:30px;
+    margin-left: 35px;
+    font-size: 2em;
+    font-weight: 600;
+    width: 100%;
+}
+#ccard{
+    max-width: 110rem;
+    margin-top:1%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    background: linear-gradient(to bottom, rgb(249, 246, 246) 50%, rgb(246, 249, 250) 100%);
+     background-repeat: no-repeat;
+        background-size:cover;
+        border-color: #2c354a;
+        border-width: 4px;
+}
+
+.title{
+    font-size: 300%;
+    color: #fdfbfb;
+    text-align: center;
+  
+}
+
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+  }
+@media screen and (max-width:768px) {
+   
+
+    .user-interface {
+        flex-direction: column;
+    }
+}
+
+
+#location-input {
+    padding: 10px;
+     margin-top:3% ;
+     margin-bottom: 80%;
+    margin-left: 28%;
+    margin-right: 3%;
+    width: 40%;
+    border: 2;
+    border-radius: 10px;
+    border-color: black;   
+}
+.search-button:hover {
+  background-color: #fff;
+  color:  #2c354a;
+  border-color:#2c354a;
+  border-width: 2px;
+}
+
+.search-button {
+    background-color: #2c354a;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0px;
+    border: 2;
+    border-radius: 10px;
+    cursor: pointer;
+    border-color: black;
+}
+#h{
+    background:transparent; 
+}
+
+/* location-and-date */
+.location-and-date {
+    margin-top:15px;
+    margin-left: 35px;
+    font-size: 2em;
+    font-weight: 600;
+   
+  }
+  
+  .location-and-date__location {
+    font-size: 1.5em;
+    font-weight: 600;
+    
+  }
+  
+  .date{
+    padding-top:0px;
+    padding-bottom: 0px;
+    margin-top :0.5em;
+    margin-bottom: 0px;
+    font-weight: 600;
+    color: #3c4b6a;
+  }
+  .main-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  @media screen and (min-width: 920px) {
+    .main-container {
+      width: 880px;
+      margin: 8px auto;
+      font-size: 1.1em;
+    }
+  }
+  /* current-temperature */
+  .current-temperature {
+    display: flex;
+    margin-top: 1.5em;
+    
+    margin-left: 100px;
+   
+
+  }
+  
+  .current-temperature__icon-container {
+    flex-grow: 1.25;
+   margin-left: 10px;
+   margin-right: 10px;
+  }
+  
+  .current-temperature__content-container {
+    flex-grow: 1;
+    margin-left: 10px;
+  }
+  
+  .current-temperature__icon {
+    width: 10.5em;
+    margin-left: 2px;
+    margin-right: px;
+  
+  }
+  
+  .current-temperature__value {
+    font-size: 5.25em;
+    font-weight: 350;
+    margin-left: 80px;
+    margin-right: 10px;
+    margin-top: 0.01px;
+    color: #3c4b6a;
+    
+
+  }
+  
+  .current-temperature__summary {
+    margin-top: -0.5em;
+    margin-left: 35px;
+    margin-right: 400px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 550;
+    width:30%;
+    color: #3c4b6a;
+  }
+  
+ 
+  
+  
+  /* current-stats */
+  .current-stats {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 1em;
+    
+   
+  }
+  @media screen and (min-width: 700px) {
+    .current-stats {
+      margin-bottom: 1em;
+      padding-bottom: 0;
+      border-top: none;
+      border-bottom: none;
+      border-left: 1px solid rgba(255,255,255,0.5);
+    }
+  }
+  
+  
+  @media screen and (min-width: 200px) {
+    .current-stats {
+      margin-bottom: 1em;
+      padding-bottom: 0;
+      border-top: none;
+      border-bottom: none;
+      border-left: 1px solid rgba(255,255,255,0.5);
+    }
+  }
+  
+  .current-stats__value {
+    margin-top: 1em;
+    font-size: 1.44em;
+  }
+  
+  .current-stats__label {
+    color: rgba(15, 42, 109, 0.6);
+    font-size: 25px;
+  }
+  
+  @media screen and (min-width: 700px) {
+    .current-temperature,
+    .current-stats {
+      width: 50%;
+    }
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 120%;
+    border: 1px solid  #cdcbcb;
+    margin-top: 0.01px;
+    font-size: 17px;
+
+    
+  }
+  
+  th, td {
+    text-align:center;
+    padding: 8px;
+    color:#090909
+    
+  }
+  
+  
+  tr:nth-child(even){}
+
+  .currenttable{
+    padding-top:15px ;
+    margin-left: 125px;
+    margin-top: 1px;
+    font-size: 25px;
+  }
+
+  nextdays{
+    display:flex;
+  }
+
+
+  #cardbody1{
+    margin-top: 0.01px;
+   
+      background: linear-gradient(to bottom, #567094 40%, #7ba4d2 100%);
+      /*background:transparent;
+      backdrop-filter:blur(50px);*/
+      padding:40px 20px;
+      font-weight: 400;
+      height: 250px;
+      margin-left: 20px;
+     
+  }
+  
+#cardbody{
+  margin-top: 1px;
+ 
+    background: linear-gradient(to bottom,  #5d7eaa 20%, #7ba4d2 100%);
+    /*background:transparent;
+    backdrop-filter:blur(50px);*/
+    padding:30px 20px;
+    font-weight: 400;
+    height: 160px;
+ 
+   
+}
+
+.t{
+   font-size:25px ; 
+    margin-left: 100px;
+    margin-right: 90px;
+   
+  
+}
+
+.sevendayssearch{
+  margin-left: 900px;
+  overflow-x:auto;
+
+}
+
+.sevendays-search-button {
+  background-color: #2c354a;
+  color: #fff;
+ border: 2;
+  border-radius: 10px;
+  cursor: pointer;
+  border-color: black;
+}
+
+.weather-forecast {
+  background-color: #fff;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  
+  .heders{
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+  }}
+
+ 
+  
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 18px;
+  float: left;
+  margin-top: 15px;
+  margin-left: 30px;
+}
+
+
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  margin-left: -10px;
+  margin-right: 10px;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 2px;
+  bottom: 3px;
+  background-color:  #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #242c39;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* dark-mode.css */
+body.dark-mode {
+  background-color: #2c354a;
+  color: #fff;
+  }
+  /* light-mode.css */
+  body {
+      transition: background-color 0.5s ease; /* Add transition for smooth effect */
+}
